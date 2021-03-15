@@ -1,0 +1,13 @@
+
+CHIP task {
+    IN sel, a, b;
+    OUT out;
+
+    PARTS:
+    // Put your code here:
+	
+	Nand (a=b, b=sel, out=nand2);
+	Nand (a=sel, b=sel, out=nand1);
+	Nand (a=nand1, b=a, out=nand3);
+	Nand (a=nand2, b=nand3, out=out);
+}
